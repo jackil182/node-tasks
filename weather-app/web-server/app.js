@@ -5,7 +5,7 @@ const getGeoData = require('../utils/geocode');
 const getWeather = require('../utils/getWeather');
 
 const app = express();
-
+const port = process.env.PORT || 3001;
 
 //define paths for Express config: static folder path, views path (for handlebars templates)
 const publicDirPath = path.join(__dirname, '../public');
@@ -92,6 +92,6 @@ app.get('*', (req, res) => {
   })
 })
 
-app.listen(3001, () => {
-  console.log(`server is listenning on 3001`);
+app.listen(port, () => {
+  console.log(`server is listenning on ${port}`);
 });
